@@ -59,7 +59,6 @@ from .imports import (
     is_comet_ml_available,
     is_cuda_available,
     is_datasets_available,
-    is_peft_available,
     is_deepspeed_available,
     is_dvclive_available,
     is_fp8_available,
@@ -70,6 +69,7 @@ from .imports import (
     is_msamp_available,
     is_npu_available,
     is_pandas_available,
+    is_peft_available,
     is_rich_available,
     is_sagemaker_available,
     is_tensorboard_available,
@@ -81,7 +81,6 @@ from .imports import (
     is_xpu_available,
 )
 from .modeling import (
-    is_peft_model,
     calculate_maximum_sizes,
     check_device_map,
     check_tied_parameters_in_config,
@@ -96,6 +95,7 @@ from .modeling import (
     get_mixed_precision_context_manager,
     id_tensor_storage,
     infer_auto_device_map,
+    is_peft_model,
     load_checkpoint_in_model,
     load_offloaded_weights,
     load_state_dict,
@@ -174,11 +174,21 @@ from .megatron_lm import (
     avg_losses_across_data_parallel_group,
     gather_across_data_parallel_groups,
 )
-from .megatron_lm import initialize as megatron_lm_initialize
-from .megatron_lm import prepare_data_loader as megatron_lm_prepare_data_loader
-from .megatron_lm import prepare_model as megatron_lm_prepare_model
-from .megatron_lm import prepare_optimizer as megatron_lm_prepare_optimizer
-from .megatron_lm import prepare_scheduler as megatron_lm_prepare_scheduler
+from .megatron_lm import (
+    initialize as megatron_lm_initialize,
+)
+from .megatron_lm import (
+    prepare_data_loader as megatron_lm_prepare_data_loader,
+)
+from .megatron_lm import (
+    prepare_model as megatron_lm_prepare_model,
+)
+from .megatron_lm import (
+    prepare_optimizer as megatron_lm_prepare_optimizer,
+)
+from .megatron_lm import (
+    prepare_scheduler as megatron_lm_prepare_scheduler,
+)
 from .memory import find_executable_batch_size, release_memory
 from .other import (
     check_os_kernel,
